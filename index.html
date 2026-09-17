@@ -225,6 +225,7 @@
   .dd-head .tag { margin: 0; flex: none; }
   .unresolved { display: inline-block; vertical-align: middle; flex: none; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: #b42318; padding: 4px 8px; border-radius: 4px; }
   h2 .unresolved { margin-left: 10px; position: relative; top: -3px; }
+  .unresolved.pending { background: #e8b300; color: #1f1f1f; }
   .dd-head::after { content: ""; position: absolute; left: 16px; top: 50%; width: 10px; height: 10px; margin-top: -8px; border-right: 2.5px solid var(--gold); border-bottom: 2.5px solid var(--gold); transform: rotate(45deg); transition: transform .2s; }
   .dd.collapsed .dd-head::after { transform: rotate(-45deg); margin-top: -3px; }
   .dd-head:hover { background: var(--gold-soft); }
@@ -780,7 +781,7 @@
   <div class="wrap">
     <div class="issue-head">
       <div class="sec-num">ISSUE 05</div>
-      <h2>Paint repair done at the dealership in an unsatisfactory way <span class="unresolved">Still not resolved</span></h2>
+      <h2>Paint repair done at the dealership in an unsatisfactory way <span class="unresolved">Still not resolved</span> <span class="unresolved pending">Pending</span></h2>
     </div>
     <p class="wide" style="margin-bottom:6px">
       The scrapes along the lower edge of the front bumper and the scratches through the paint were
