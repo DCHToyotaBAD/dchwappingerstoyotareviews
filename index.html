@@ -214,7 +214,16 @@
   footer { margin-top: 60px; border-top: 1px solid var(--line); padding: 36px 0 60px; font-size: 13.5px; color: var(--ink-faint); }
   footer p { max-width: 76ch; margin-bottom: 12px; }
 
+  /* collapsible sections: click the title bar to minimize */
+  section .issue-head { cursor: pointer; user-select: none; position: relative; padding-right: 44px; }
+  section .issue-head::after { content: ""; position: absolute; right: 8px; top: 50%; width: 12px; height: 12px; margin-top: -9px; border-right: 2.5px solid var(--gold); border-bottom: 2.5px solid var(--gold); transform: rotate(45deg); transition: transform .2s; }
+  section.collapsed .issue-head::after { transform: rotate(-45deg); margin-top: -4px; }
+  section.collapsed .issue-head { border-bottom-color: var(--line); margin-bottom: 0; }
+  section.collapsed .wrap > :not(.issue-head) { display: none; }
+  section .issue-head:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+  @media (prefers-reduced-motion: reduce) { section .issue-head::after { transition: none; } }
   .opinion { font-style: italic; }
+
   .opinion::before { content: "Opinion: "; font-weight: 700; font-style: normal; color: var(--ink-soft); }
 </style>
 </head>
@@ -286,6 +295,20 @@
     current = c; btn.classList.add("playing"); btn.textContent = "Stop";
     c.audio.play().catch(function () { stop(c); current = null; });
   });
+})();
+</script>
+<script>
+(function () {
+  var heads = document.querySelectorAll("section .issue-head");
+  heads.forEach(function (h) {
+    h.setAttribute("role", "button"); h.setAttribute("tabindex", "0"); h.setAttribute("aria-expanded", "true");
+    h.setAttribute("title", "Click to minimize or expand this section");
+    function toggle() { var sec = h.closest("section"); var c = sec.classList.toggle("collapsed"); h.setAttribute("aria-expanded", String(!c)); }
+    h.addEventListener("click", function (e) { if (e.target.closest("a")) return; toggle(); });
+    h.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+  });
+  function openHash() { var id = location.hash.slice(1); if (!id) return; var sec = document.getElementById(id); if (sec && sec.classList.contains("collapsed")) { sec.classList.remove("collapsed"); var h = sec.querySelector(".issue-head"); if (h) h.setAttribute("aria-expanded", "true"); } }
+  window.addEventListener("hashchange", openHash); openHash();
 })();
 </script>
 </body>
