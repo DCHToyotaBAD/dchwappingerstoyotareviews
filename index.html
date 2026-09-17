@@ -217,19 +217,19 @@
   footer p { max-width: 76ch; margin-bottom: 12px; }
 
   /* drop-down sub-sections inside a section (one per defect) */
-  .sub { border: 1px solid var(--line); border-radius: 10px; background: var(--card); margin-top: 12px; overflow: hidden; }
-  .sub-head { display: flex; align-items: center; gap: 12px; padding: 12px 44px 12px 16px; cursor: pointer; user-select: none; position: relative; }
-  .sub-head h3 { font-family: var(--serif); font-size: 18px; margin: 0; }
-  .sub-head .tag { margin: 0; flex: none; }
-  .sub-head::after { content: ""; position: absolute; right: 16px; top: 50%; width: 10px; height: 10px; margin-top: -8px; border-right: 2.5px solid var(--gold); border-bottom: 2.5px solid var(--gold); transform: rotate(45deg); transition: transform .2s; }
-  .sub.collapsed .sub-head::after { transform: rotate(-45deg); margin-top: -3px; }
-  .sub-head:hover { background: var(--gold-soft); }
-  .sub-head:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
-  .sub-body { padding: 4px 16px 18px; border-top: 1px solid var(--line); }
-  .sub.collapsed .sub-body { display: none; }
-  .sub .split { margin-top: 12px; }
+  .dd { border: 1px solid var(--line); border-radius: 10px; background: var(--card); margin-top: 12px; overflow: hidden; }
+  .dd-head { display: flex; align-items: center; gap: 12px; padding: 12px 44px 12px 16px; cursor: pointer; user-select: none; position: relative; }
+  .dd-head h3 { font-family: var(--serif); font-size: 18px; margin: 0; }
+  .dd-head .tag { margin: 0; flex: none; }
+  .dd-head::after { content: ""; position: absolute; right: 16px; top: 50%; width: 10px; height: 10px; margin-top: -8px; border-right: 2.5px solid var(--gold); border-bottom: 2.5px solid var(--gold); transform: rotate(45deg); transition: transform .2s; }
+  .dd.collapsed .dd-head::after { transform: rotate(-45deg); margin-top: -3px; }
+  .dd-head:hover { background: var(--gold-soft); }
+  .dd-head:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+  .dd-body { padding: 4px 16px 18px; border-top: 1px solid var(--line); }
+  .dd.collapsed .dd-body { display: none; }
+  .dd .split { margin-top: 12px; }
   .evi video { width: 100%; display: block; border-radius: 6px; border: 1px solid var(--line); background: #000; }
-  @media (max-width: 640px) { .sub-head { flex-wrap: wrap; } }
+  @media (max-width: 640px) { .dd-head { flex-wrap: wrap; } }
   /* collapsible sections: click the title bar to minimize */
 
   section .issue-head { cursor: pointer; user-select: none; position: relative; padding-left: 44px; }
@@ -385,14 +385,14 @@
 </script>
 <script>
 (function () {
-  document.querySelectorAll(".sub-head").forEach(function (h) {
+  document.querySelectorAll(".dd-head").forEach(function (h) {
     h.setAttribute("role", "button"); h.setAttribute("tabindex", "0");
-    var sub = h.closest(".sub"); h.setAttribute("aria-expanded", String(!sub.classList.contains("collapsed")));
+    var sub = h.closest(".dd"); h.setAttribute("aria-expanded", String(!sub.classList.contains("collapsed")));
     function toggle() { var c = sub.classList.toggle("collapsed"); h.setAttribute("aria-expanded", String(!c)); }
     h.addEventListener("click", function (e) { if (e.target.closest("a")) return; toggle(); });
     h.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
   });
-  function openSubHash() { var id = location.hash.slice(1); if (!id) return; var sub = document.getElementById(id); if (sub && sub.classList.contains("sub")) { sub.classList.remove("collapsed"); var sec = sub.closest("section"); if (sec) sec.classList.remove("collapsed"); } }
+  function openSubHash() { var id = location.hash.slice(1); if (!id) return; var sub = document.getElementById(id); if (sub && sub.classList.contains("dd")) { sub.classList.remove("collapsed"); var sec = sub.closest("section"); if (sec) sec.classList.remove("collapsed"); } }
   window.addEventListener("hashchange", openSubHash); openSubHash();
 })();
 </script>
