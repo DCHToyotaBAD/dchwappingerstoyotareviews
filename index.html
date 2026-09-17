@@ -223,7 +223,8 @@
   .dd-head { display: flex; align-items: center; gap: 12px; padding: 12px 16px 12px 42px; cursor: pointer; user-select: none; position: relative; }
   .dd-head h3 { font-family: var(--serif); font-size: 18px; margin: 0; }
   .dd-head .tag { margin: 0; flex: none; }
-  .dd-head .unresolved { flex: none; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: #b42318; padding: 4px 8px; border-radius: 4px; }
+  .unresolved { display: inline-block; vertical-align: middle; flex: none; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: #b42318; padding: 4px 8px; border-radius: 4px; }
+  h2 .unresolved { margin-left: 10px; position: relative; top: -3px; }
   .dd-head::after { content: ""; position: absolute; left: 16px; top: 50%; width: 10px; height: 10px; margin-top: -8px; border-right: 2.5px solid var(--gold); border-bottom: 2.5px solid var(--gold); transform: rotate(45deg); transition: transform .2s; }
   .dd.collapsed .dd-head::after { transform: rotate(-45deg); margin-top: -3px; }
   .dd-head:hover { background: var(--gold-soft); }
