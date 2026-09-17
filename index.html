@@ -132,7 +132,7 @@
   }
   .evi .cap { font-size: 13px; color: var(--ink-soft); margin-top: 8px; }
   .evi .cap strong { color: var(--ink); }
-  .evi img { width: 100%; display: block; border-radius: 6px; border: 1px solid var(--line); }
+  .evi img, .evi video { width: 100%; display: block; border-radius: 6px; border: 1px solid var(--line); }
   .evi .ph {
     border: 1px dashed var(--gold-line); border-radius: 6px; background: #fffdf5;
     padding: 26px 14px; text-align: center; font-size: 12.5px; color: var(--ink-faint);
@@ -143,6 +143,8 @@
   .evi.quote .q { font-family: var(--serif); font-size: 17px; line-height: 1.5; }
   .evi.quote .attr { margin-top: 10px; font-size: 12.5px; color: #b3ac9e; }
   .evi.quote .ts { font-family: var(--mono); color: #d9b45b; }
+  .staff-name { font-family: var(--serif); font-weight: 700; font-size: 21px; text-align: center; margin-top: 12px; }
+  .staff-title { text-align: center; font-weight: 700; font-size: 14px; color: var(--ink-soft); margin-top: 2px; }
   .exhibit { display: inline-block; font-family: var(--mono); font-size: 11px; font-weight: 700; background: var(--gold-soft); color: var(--gold); border: 1px solid var(--gold-line); border-radius: 4px; padding: 1px 6px; }
   @media (max-width: 760px) {
     .split { grid-template-columns: 1fr; gap: 18px; }
@@ -215,14 +217,17 @@
   footer p { max-width: 76ch; margin-bottom: 12px; }
 
   /* collapsible sections: click the title bar to minimize */
-  section .issue-head { cursor: pointer; user-select: none; position: relative; padding-right: 44px; }
-  section .issue-head::after { content: ""; position: absolute; right: 8px; top: 50%; width: 12px; height: 12px; margin-top: -9px; border-right: 2.5px solid var(--gold); border-bottom: 2.5px solid var(--gold); transform: rotate(45deg); transition: transform .2s; }
+  section .issue-head { cursor: pointer; user-select: none; position: relative; padding-left: 44px; }
+  section .issue-head::after { content: ""; position: absolute; left: 8px; top: 50%; width: 12px; height: 12px; margin-top: -9px; border-right: 2.5px solid var(--gold); border-bottom: 2.5px solid var(--gold); transform: rotate(45deg); transition: transform .2s; }
   section.collapsed .issue-head::after { transform: rotate(-45deg); margin-top: -4px; }
   section.collapsed .issue-head { border-bottom-color: var(--line); margin-bottom: 0; }
   section.collapsed .wrap > :not(.issue-head) { display: none; }
   section .issue-head:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
   @media (prefers-reduced-motion: reduce) { section .issue-head::after { transition: none; } }
+  .evi .etitle { font-size: 14px; font-weight: 800; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .evi .cap.compact { font-size: 12px; line-height: 1.4; margin-top: 6px; }
   .opinion { font-style: italic; }
+
 
   .opinion::before { content: "Opinion: "; font-weight: 700; font-style: normal; color: var(--ink-soft); }
 </style>
@@ -230,6 +235,11 @@
 <body>
 
 
+<nav>
+  <div class="wrap">
+    <a href="#checklist">The Inspection</a>
+  </div>
+</nav>
 
 <header class="hero">
   <div class="wrap">
@@ -256,7 +266,59 @@
     </p>
   </div>
 </header>
-<section id="soon"><div class="wrap"><p class="narrow">Sections are being added one at a time as the documents behind each one are verified. Check back soon.</p></div></section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="issue-head">
+      <div class="sec-num">ISSUE 01</div>
+      <h2>Toyota's 160-point inspection not done by a mechanic, many issues missed</h2>
+    </div>
+    <div class="split">
+      <div class="story">
+        <div class="col-label">Summary</div>
+        <p>
+          Part of the Gold Certified process is a detailed inspection of every car, signed off
+          by several people, to make sure it is up to Toyota's standards. Toyota's official
+          <strong>160-Point Quality Assurance Inspection Check Sheet</strong> requires three
+          signatures: a <strong>"Required Technician Signature"</strong> on a line labeled
+          <strong>"Toyota Trained Technician,"</strong> a "Required Manager Signature," and a
+          Used Car Manager. The dealership's own website says <em>"A rigorous 160-point
+          inspection is completed on every gold certified Toyota"</em>
+          (<a href="https://www.dchwappingerstoyota.com/toyota-certified-used-vehicle-program/" target="_blank" rel="noopener">their program page</a>).
+        </p>
+        <p>
+          The checklist I was provided shows <strong>all three lines signed by the same
+          person</strong>. The dealership's own
+          <a href="https://www.dchwappingerstoyota.com/about-us/staff/" target="_blank" rel="noopener">staff page</a>
+          lists that person as a <strong>Sales Manager</strong>, not a technician. Even though
+          the form requires the signee to confirm they are a technician.
+        </p>
+        <p>
+          According to this document, <strong>a technician never looked at my truck before it
+          was Gold Certified</strong>. This is particularly troubling considering every box was
+          marked as passing, even though I had many issues with the vehicle, including one that
+          was unsafe. I have seen this pattern of neglecting advertised protocols when they are
+          inconvenient throughout my dealings with this dealership.
+        </p>
+      </div>
+      <div class="proof">
+        <div class="proof-label">Evidence</div>
+        <div class="evi">
+          <div class="etitle"><span class="exhibit">E-6</span> Improper signatures on the certification</div>
+          <img src="assets/checklist-signatures.png" alt="Checklist signature page: Technician, Service Manager, and Used Car Manager lines, each with the same name and the date 05/08/2026" loading="lazy">
+          <div class="cap compact">Three roles, one name, one date. <a href="assets/2026-09-16-gold-certified-checklist-E6.pdf" target="_blank" rel="noopener">Open the full checklist (PDF)</a></div>
+        </div>
+        <div class="evi">
+          <div class="etitle"><span class="exhibit">E-20</span> Salesperson who signed as the Technician</div>
+          <a href="https://www.dchwappingerstoyota.com/about-us/staff/" target="_blank" rel="noopener">
+            <img src="assets/staff-page-joshua-johns-screenshot.jpg" alt="Screenshot of the DCH Wappingers Falls Toyota staff page listing Joshua Johns as Sales Manager" loading="lazy">
+          </a>
+          <div class="cap compact">Sales Manager, per the <a href="https://www.dchwappingerstoyota.com/about-us/staff/" target="_blank" rel="noopener">dealership's staff page</a>. Captured 2026-09-17.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
