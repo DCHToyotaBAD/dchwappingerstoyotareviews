@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buyer Beware at DCH Toyota Wappingers</title>
+<meta name="description" content="Buyer beware at DCH Toyota Wappingers Falls. Make sure to ask about the 9 year warranty. A first-hand, document-backed account of buying a used 2022 Toyota Tundra sold as Gold Certified: a warranty that changed between deposit and delivery, defects the 160-point inspection missed, and what the dealership said on tape.">
+<style>
+  :root {
+    --paper: #faf9f6;
+    --card: #ffffff;
+    --ink: #1c1f24;
+    --ink-soft: #4b5563;
+    --ink-faint: #6b7280;
+    --gold: #a16207;
+    --gold-soft: #fdf3d7;
+    --gold-line: #e5cf8f;
+    --red: #b91c1c;
+    --red-soft: #fdecec;
+    --line: #e5e2da;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --serif: Georgia, "Times New Roman", serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    font-size: 17px;
+  }
+
+  /* ============ DRAFT BANNER (remove before publishing) ============ */
+  .draft-banner {
+    background: repeating-linear-gradient(-45deg, #7f1d1d, #7f1d1d 14px, #991b1b 14px, #991b1b 28px);
+    color: #fff;
+    text-align: center;
+    padding: 10px 16px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+  .draft-banner small { display: block; font-weight: 400; text-transform: none; letter-spacing: 0; opacity: .9; margin-top: 2px; }
+  .todo {
+    background: #fff3c4;
+    border: 1px dashed #d97706;
+    border-radius: 4px;
+    padding: 0 5px;
+    font-size: .82em;
+    color: #92400e;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  /* ================================================================ */
+
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 68ch; }
+
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,249,246,.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; gap: 4px; overflow-x: auto; padding: 0 16px; }
+  nav a {
+    color: var(--ink-soft); text-decoration: none; font-size: 13.5px; font-weight: 600;
+    padding: 12px 10px; white-space: nowrap; border-bottom: 2px solid transparent;
+  }
+  nav a:hover { color: var(--gold); border-bottom-color: var(--gold-line); }
+
+  header.hero { padding: 64px 0 40px; border-bottom: 1px solid var(--line); }
+  .kicker {
+    color: var(--gold); font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    font-size: 12.5px; margin-bottom: 16px;
+  }
+  h1 {
+    font-family: var(--serif); font-size: clamp(30px, 5vw, 44px); line-height: 1.15;
+    font-weight: 700; letter-spacing: -.01em; max-width: 21ch;
+  }
+  .hero .hook { font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--gold); margin-top: 14px; }
+  .hero .sub { margin-top: 20px; font-size: 19px; color: var(--ink-soft); max-width: 62ch; }
+  .hero .sub strong { color: var(--ink); }
+  .hero .note { margin-top: 18px; font-size: 14px; color: var(--ink-faint); max-width: 62ch; }
+
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; margin: 36px 0 8px; }
+  .facts div { background: var(--card); padding: 14px 16px; }
+  .facts .k { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-faint); font-weight: 700; }
+  .facts .v { font-size: 15.5px; font-weight: 650; margin-top: 3px; }
+  .facts .v.mono { font-family: var(--mono); font-size: 13.5px; }
+
+  /* ============ ISSUE BLOCKS: title bar on top, story left, evidence right ============ */
+  section { padding: 56px 0 8px; }
+  .issue-head { border-bottom: 3px solid var(--gold); padding-bottom: 14px; margin-bottom: 28px; }
+  .sec-num { color: var(--gold); font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: .08em; }
+  h2 { font-family: var(--serif); font-size: clamp(24px, 3.6vw, 32px); line-height: 1.2; margin: 6px 0 0; max-width: 34ch; }
+  h3 { font-size: 18px; margin: 26px 0 10px; }
+
+  .split { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px; align-items: start; }
+  .clip { display: grid; grid-template-columns: auto 1fr auto; gap: 8px 10px; align-items: center; margin-top: 10px; }
+  .clip .play { margin-top: 0; }
+  .clip .bar { height: 6px; background: #2a2d35; border-radius: 4px; overflow: hidden; }
+  .clip .bar i { display: block; height: 100%; width: 0; background: #d9b45b; }
+  .clip .time { font-family: var(--mono); font-size: 11px; color: #b3ac9e; min-width: 34px; text-align: right; }
+  .clip .full { grid-column: 1 / -1; font-size: 11.5px; color: #b3ac9e; }
+  .play { display: inline-flex;
+ align-items: center; gap: 6px; font: inherit; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid #d9b45b; background: transparent; color: #d9b45b; cursor: pointer; margin-top: 10px; }
+  .play:hover, .play.playing { background: #d9b45b; color: #16181d; }
+  .play::before { content: "\25B6"; font-size: 10px; }
+  .play.playing::before { content: "\25A0"; }
+  .play[disabled] { opacity: .5; cursor: default; }
+  .split + .split { margin-top: 34px; padding-top: 34px; border-top: 1px solid var(--line); }
+  .split3 { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 4fr); gap: 24px; align-items: start; }
+  .split3 .quotes { display: flex; flex-direction: column; gap: 12px; }
+  .col-label { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; font-weight: 800; color: var(--ink-faint); display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .col-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  @media (max-width: 1000px) { .split3 { grid-template-columns: 1fr 1fr; } .split3 .story { grid-column: 1 / -1; } }
+  @media (max-width: 640px) { .split3 { grid-template-columns: 1fr; } }
+  .story p { margin-bottom: 16px; max-width: 62ch; }
+  .story h4 { font-family: var(--serif); font-size: 20px; margin-bottom: 8px; }
+  .story p + h4 { margin-top: 24px; }
+  .proof { display: flex; flex-direction: column; gap: 12px; }
+  .proof-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .12em; font-weight: 800;
+    color: var(--ink-faint); display: flex; align-items: center; gap: 8px;
+  }
+  .proof-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .evi {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px;
+  }
+  .evi .cap { font-size: 13px; color: var(--ink-soft); margin-top: 8px; }
+  .evi .cap strong { color: var(--ink); }
+  .evi img { width: 100%; display: block; border-radius: 6px; border: 1px solid var(--line); }
+  .evi .ph {
+    border: 1px dashed var(--gold-line); border-radius: 6px; background: #fffdf5;
+    padding: 26px 14px; text-align: center; font-size: 12.5px; color: var(--ink-faint);
+  }
+  .evi .ph::before { content: "📷 "; }
+  .evi .ph.doc::before { content: "📄 "; }
+  .evi.quote { background: #16181d; border-color: #16181d; color: #e8e6e1; }
+  .evi.quote .q { font-family: var(--serif); font-size: 17px; line-height: 1.5; }
+  .evi.quote .attr { margin-top: 10px; font-size: 12.5px; color: #b3ac9e; }
+  .evi.quote .ts { font-family: var(--mono); color: #d9b45b; }
+  .exhibit { display: inline-block; font-family: var(--mono); font-size: 11px; font-weight: 700; background: var(--gold-soft); color: var(--gold); border: 1px solid var(--gold-line); border-radius: 4px; padding: 1px 6px; }
+  @media (max-width: 760px) {
+    .split { grid-template-columns: 1fr; gap: 18px; }
+  }
+  /* =================================================================================== */
+
+  .callout {
+    border-left: 4px solid var(--gold); background: var(--gold-soft);
+    padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 22px 0; max-width: 68ch;
+  }
+  .callout.red { border-left-color: var(--red); background: var(--red-soft); }
+  .callout p { margin: 0; }
+  .callout p + p { margin-top: 10px; }
+
+  .tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: 2px 8px; border-radius: 20px; margin-bottom: 8px; }
+  .tag.safety { background: var(--red-soft); color: var(--red); }
+  .tag.defect { background: var(--gold-soft); color: var(--gold); }
+  .tag.fixed { background: #e7f6ec; color: #15803d; }
+  .tag.open { background: var(--red-soft); color: var(--red); }
+
+  ol.explanations { counter-reset: exp; list-style: none; max-width: 62ch; margin: 4px 0 20px; }
+  ol.explanations li {
+    counter-increment: exp; position: relative; padding: 12px 16px 12px 56px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 8px; margin-bottom: 8px; font-size: 15.5px;
+  }
+  ol.explanations li::before {
+    content: counter(exp); position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+    width: 28px; height: 28px; border-radius: 50%; background: var(--gold-soft); color: var(--gold);
+    font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 14px;
+    border: 1px solid var(--gold-line);
+  }
+  ol.explanations li .src { display: block; font-size: 12.5px; color: var(--ink-faint); font-family: var(--mono); margin-top: 3px; }
+
+  .tbl-scroll { overflow-x: auto; margin: 22px 0; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14.5px; }
+  th { text-align: left; background: #f4f1ea; padding: 12px 16px; font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--ink-soft); }
+  td { padding: 12px 16px; border-top: 1px solid var(--line); vertical-align: top; }
+  td.promise { color: var(--ink); font-weight: 600; }
+  td.reality { color: var(--red); }
+
+  .timeline { list-style: none; margin: 24px 0; max-width: 70ch; }
+  .timeline li { position: relative; padding: 0 0 22px 34px; border-left: 2px solid var(--gold-line); margin-left: 8px; }
+  .timeline li:last-child { border-left-color: transparent; }
+  .timeline li::before {
+    content: ""; position: absolute; left: -7px; top: 4px; width: 12px; height: 12px;
+    border-radius: 50%; background: var(--gold); border: 2px solid var(--paper);
+  }
+  .timeline .date { font-family: var(--mono); font-size: 12.5px; color: var(--gold); font-weight: 700; letter-spacing: .04em; }
+  .timeline p { margin: 2px 0 0; font-size: 15.5px; }
+
+  .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 24px 0; }
+  .review {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .review .quote { font-size: 15px; font-family: var(--serif); line-height: 1.55; }
+  .review .meta { font-size: 12.5px; color: var(--ink-faint); margin-top: auto; }
+  .review .meta a { color: var(--gold); }
+
+  .balance {
+    border: 1px solid var(--line); background: var(--card); border-radius: 10px; padding: 20px 24px;
+    margin: 26px 0; max-width: 72ch; font-size: 15.5px; color: var(--ink-soft);
+  }
+
+  a { color: var(--gold); }
+  .sources ul { margin: 14px 0 14px 22px; font-size: 15px; }
+  .sources li { margin-bottom: 6px; }
+
+  footer { margin-top: 60px; border-top: 1px solid var(--line); padding: 36px 0 60px; font-size: 13.5px; color: var(--ink-faint); }
+  footer p { max-width: 76ch; margin-bottom: 12px; }
+
+  .opinion { font-style: italic; }
+  .opinion::before { content: "Opinion: "; font-weight: 700; font-style: normal; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">A documented account · Wappingers Falls, NY</div>
+    <h1>Buyer beware at DCH Toyota Wappingers</h1>
+    <p class="hook">Make sure to ask about the 9 year warranty.</p>
+    <p class="sub">
+      I am so tired of being taken advantage of. This is where I draw the line. I recently
+      bought a used <strong>2022 Toyota Tundra</strong> from <strong>DCH Toyota in Wappingers
+      Falls</strong>, sold as <strong>Toyota Gold Certified</strong>. Through the process there
+      have been so many issues. The sales department is not managed correctly. They do not follow the protocols on Toyota's own website. They make up their own rules, rules with no evidence behind them that appear nowhere in your documentation. And they will outright lie or mislead you to save a few dollars, even when it is clear what the right thing to do is.
+    </p>
+    <p class="sub">
+      Below I have outlined the myriad of ridiculous issues I have had with my truck, which was the <strong>current sales manager's own truck</strong>. He was aware of many of these
+      issues and chose not to resolve them before the sale.
+    </p>
+    <p class="note">
+      Each issue is described on the left, with the supporting photos, documents, and
+      recordings beside it on the right. Facts are cited to their source. Where I state an opinion, it is labeled as one.
+    </p>
+  </div>
+</header>
+<section id="soon"><div class="wrap"><p class="narrow">Sections are being added one at a time as the documents behind each one are verified. Check back soon.</p></div></section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>This is an independent customer review site.</strong> It is not affiliated with, endorsed by, or operated by DCH Wappingers Falls Toyota, DCH Auto Group, Lithia Motors, or Toyota Motor North America.</p>
+    <p>
+      This page describes the author's first-hand experience purchasing a vehicle from DCH
+      Wappingers Falls Toyota, 1349 Route 9, Wappingers Falls, NY. Statements of fact are based
+      on the author's purchase documents, certification paperwork, recorded telephone calls with
+      dealership personnel, and publicly posted customer reviews (attributed to their platforms).
+      Statements of opinion are identified as such. Excerpts from other customers' reviews are
+      quoted from public platforms and reflect those customers' own accounts. Dealership employees are identified by the titles the dealership itself publishes. No accusation of any crime is made or implied.
+    </p>
+    <p>Last updated: September 2026.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var current = null;
+  function fmt(t) { t = Math.max(0, Math.floor(t)); return Math.floor(t / 60) + ":" + ("0" + (t % 60)).slice(-2); }
+  function stop(c) { if (!c) return; c.audio.pause(); c.audio.currentTime = 0; c.btn.classList.remove("playing"); c.btn.textContent = c.label; c.fill.style.width = "0"; c.bar.setAttribute("aria-valuenow", 0); c.time.textContent = fmt(c.audio.duration || 0); }
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest(".clip .play"); if (!btn) return;
+    var box = btn.closest(".clip");
+    if (!box._c) {
+      var a = new Audio(box.getAttribute("data-src")); a.preload = "metadata";
+      var c = box._c = { audio: a, btn: btn, label: btn.textContent, fill: box.querySelector(".bar i"), bar: box.querySelector(".bar"), time: box.querySelector(".time") };
+      a.addEventListener("loadedmetadata", function () { c.time.textContent = fmt(a.duration); });
+      a.addEventListener("timeupdate", function () { var p = a.duration ? a.currentTime / a.duration * 100 : 0; c.fill.style.width = p + "%"; c.bar.setAttribute("aria-valuenow", Math.round(p)); c.time.textContent = fmt(a.currentTime) + " / " + fmt(a.duration); });
+      a.addEventListener("ended", function () { stop(c); current = null; });
+      a.addEventListener("error", function () { btn.disabled = true; btn.textContent = "Audio unavailable"; });
+    }
+    var c = box._c;
+    if (current === c) { stop(c); current = null; return; }
+    if (current) stop(current);
+    current = c; btn.classList.add("playing"); btn.textContent = "Stop";
+    c.audio.play().catch(function () { stop(c); current = null; });
+  });
+})();
+</script>
+</body>
+</html>
