@@ -218,10 +218,11 @@
 
   /* drop-down sub-sections inside a section (one per defect) */
   .dd { border: 1px solid var(--line); border-radius: 10px; background: var(--card); margin-top: 12px; overflow: hidden; }
-  .dd-head { display: flex; align-items: center; gap: 12px; padding: 12px 44px 12px 16px; cursor: pointer; user-select: none; position: relative; }
+  .dd-head { display: flex; align-items: center; gap: 12px; padding: 12px 16px 12px 42px; cursor: pointer; user-select: none; position: relative; }
   .dd-head h3 { font-family: var(--serif); font-size: 18px; margin: 0; }
   .dd-head .tag { margin: 0; flex: none; }
-  .dd-head::after { content: ""; position: absolute; right: 16px; top: 50%; width: 10px; height: 10px; margin-top: -8px; border-right: 2.5px solid var(--gold); border-bottom: 2.5px solid var(--gold); transform: rotate(45deg); transition: transform .2s; }
+  .dd-head .unresolved { flex: none; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: #b42318; padding: 4px 8px; border-radius: 4px; }
+  .dd-head::after { content: ""; position: absolute; left: 16px; top: 50%; width: 10px; height: 10px; margin-top: -8px; border-right: 2.5px solid var(--gold); border-bottom: 2.5px solid var(--gold); transform: rotate(45deg); transition: transform .2s; }
   .dd.collapsed .dd-head::after { transform: rotate(-45deg); margin-top: -3px; }
   .dd-head:hover { background: var(--gold-soft); }
   .dd-head:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
@@ -464,6 +465,217 @@
     </div>
   </div>
 </section>
+
+<section id="defects">
+  <div class="wrap">
+    <div class="issue-head">
+      <div class="sec-num">ISSUE 02</div>
+      <h2>Everything that was wrong with the truck after it was Gold Certified</h2>
+    </div>
+    <p class="narrow" style="margin-bottom:6px">
+      Toyota Gold Certified vehicles are marketed as having passed a
+      <a href="https://www.toyotacertified.com/inspection" target="_blank" rel="noopener">160-point Quality
+      Assurance Inspection</a> by factory-trained technicians, with anything below standard
+      fixed before the sale. Here is what I found on this certified truck, starting on the test
+      drive. Click a problem to open it. For each one, the checklist line that was signed off as
+      good is shown beside the evidence. Keep in mind that <strong>every item was marked as
+      passing on the checklist</strong>
+      (<a href="assets/2026-09-16-gold-certified-checklist-E6.pdf" target="_blank" rel="noopener">see the full checklist</a>).
+      Although they have agreed to fix some of these issues, the bigger issue is that <strong>they were
+      not caught in the initial inspection</strong>, especially since <strong>the inspection does not
+      appear to have been done by a technician</strong>. <strong>What else could be wrong?</strong> Make sure
+      you look at this sheet and <strong>go through everything with a fine-tooth comb before giving this
+      dealership any money</strong>.
+    </p>
+
+    <div class="dd collapsed" id="d-paint">
+      <div class="dd-head"><h3>Scratches through the paint on the bumper and lower panel</h3><span class="unresolved">Still not resolved</span></div>
+      <div class="dd-body">
+        <div class="story">
+          <div class="col-label">Summary</div>
+          <p>Scrapes along the lower edge of the front bumper and scratches through the paint on the lower panel, down to bare metal. Daryl Callahan said on the phone that the bumper scratch had been there <em>"since the day that I got the truck."</em> He drove this truck before the dealership sold it to me, so the damage was known, and it was still marked as passing on the checklist. Still waiting for an acceptable resolution.</p>
+        </div>
+        <div class="cards3">
+          <div class="evi">
+            <div class="etitle"><span class="exhibit">E-16</span> Scratches through the paint on the lower panel</div>
+            <img src="assets/2026-09-16-paint-scratches-lower-panel.jpg" alt="Deep scratches through the paint on a lower body panel" loading="lazy">
+            <div class="cap compact">Photographed September 2026.</div>
+          </div>
+          <div class="evi quote">
+            <div class="q">"...along the plastic there on the front lower edge of the bumper has been scratched since the day that I got the truck."</div>
+            <div class="attr">Daryl Callahan, General Sales Manager, recorded call 2 <span class="ts">[13:22]</span></div>
+            <div class="clip" data-src="assets/clips/call2-1322.m4a">
+              <button class="play" type="button" aria-label="Play the recording from 13:22">Play 13:22</button>
+              <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div>
+              <span class="time">0:00</span>
+              <a class="full" href="assets/call2-sales-manager.m4a#t=802" target="_blank" rel="noopener">Full recording at 13:22</a>
+            </div>
+          </div>
+          <div class="evi">
+            <div class="etitle"><span class="exhibit">E-6</span> Paint marked as passing</div>
+            <img src="assets/checklist-paint-bumper.png" alt="Checklist items 155 and 158, paint free of scratches and bumpers free of cuts and gouges, checked Meets Standards" loading="lazy">
+            <div class="cap compact">Item 155, paint "reasonably free of scratches." <a href="assets/2026-09-16-gold-certified-checklist-E6.pdf" target="_blank" rel="noopener">Full checklist (PDF)</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dd collapsed" id="d-bedliner">
+      <div class="dd-head"><h3>Peeling spray-in bed liner</h3><span class="unresolved">Still not resolved</span></div>
+      <div class="dd-body">
+        <div class="story">
+          <div class="col-label">Summary</div>
+          <p>The spray-in bed liner, listed as installed equipment on the truck's own Gold Certified window sticker (<a href="assets/2026-05-08-gold-certified-window-sticker-E7.jpg" target="_blank" rel="noopener">see the sticker</a>), was peeling off the bed in chunks. Although you cannot see it in the video, there are big sections underneath the bed liner that are detached because the elements got in under it. The checklist marked the bed liner as "in good condition and secured." It took me many calls to Toyota and to the dealership, and no one can show me why a bed liner on a Gold Certified truck is allowed to be falling apart. This item is still not resolved.</p>
+        </div>
+        <div class="cards3">
+          <div class="evi">
+            <div class="etitle"><span class="exhibit">E-29</span> The liner lifting off the bed, on video</div>
+            <video controls muted preload="metadata" poster="assets/2026-07-17-bed-liner-peeling-E29-poster.jpg">
+              <source src="assets/2026-07-17-bed-liner-peeling-E29.mp4" type="video/mp4">
+            </video>
+            <div class="cap compact">Recorded July 17, 2026, two months after purchase. No audio.</div>
+          </div>
+          <div class="evi">
+            <div class="etitle"><span class="exhibit">E-16</span> A flap of liner lifting off the floor</div>
+            <img src="assets/pre-repair-bed-liner-peel-flap-floor-1.jpg" alt="A finger lifting a loose flap of spray-in bed liner off the truck bed floor" loading="lazy">
+            <div class="cap compact">Before the dealership's repair.</div>
+          </div>
+          <div class="evi">
+            <div class="etitle"><span class="exhibit">E-6</span> Bed liner marked as passing</div>
+            <img src="assets/checklist-bedliner.png" alt="Checklist items 7 and 8, truck bed and bed liner in good condition, checked Meets Standards" loading="lazy">
+            <div class="cap compact">Items 7 and 8, "Truck bed-liner is in good condition and secured." <a href="assets/2026-09-16-gold-certified-checklist-E6.pdf" target="_blank" rel="noopener">Full checklist (PDF)</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dd collapsed" id="d-tailgate">
+      <div class="dd-head"><h3>Tailgate will not drop from the key fob or the side button</h3><span class="unresolved">Still not resolved</span></div>
+      <div class="dd-body">
+        <div class="split">
+          <div class="story">
+            <div class="col-label">Summary</div>
+            <p>Press the fob and the latch clicks, but the tailgate stays up. Toyota's manual says it should open by gravity, and Toyota's own installation instructions for the cover on this truck require the tailgate to open without interference. Daryl Callahan, the sales manager at DCH Wappingers Falls Toyota, tells me the button is only supposed to undo the latch, so it is working perfectly. That is a lie. This item is still not resolved.</p>
+          </div>
+          <div class="proof">
+            <div class="proof-label">Evidence</div>
+            <div class="evi">
+              <div class="etitle"><span class="exhibit">E-23</span> "Tailgate opens by gravity"</div>
+              <img src="assets/owners-manual-fob-tailgate-button.png" alt="Key fob tailgate button from the owner's manual: the icon shows a truck with the tailgate down" loading="lazy">
+              <div class="cap compact">2022 Tundra Owner's Manual, page 119. <a href="assets/2022-toyota-tundra-owners-manual-M0C029.pdf" target="_blank" rel="noopener">Full manual (PDF)</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dd collapsed" id="d-mirror">
+      <div class="dd-head"><h3>Broken power side mirror</h3></div>
+      <div class="dd-body">
+        <div class="split">
+          <div class="story">
+            <div class="col-label">Summary</div>
+            <p>I caught this myself before purchase. It was fixed before I bought the truck, but it was still missed during the certification inspection. It was marked with a pass on the checklist.</p>
+
+          </div>
+          <div class="proof">
+            <div class="proof-label">Evidence</div>
+            <div class="evi">
+              <div class="etitle"><span class="exhibit">E-6</span> Mirrors marked as passing</div>
+              <img src="assets/checklist-mirrors.png" alt="Checklist items 91 and 92, exterior mirrors operation and condition and remote mirror control, checked Meets Standards" loading="lazy">
+              <div class="cap compact">Items 91 and 92, mirror operation, condition, and remote control. <a href="assets/2026-09-16-gold-certified-checklist-E6.pdf" target="_blank" rel="noopener">Full checklist (PDF)</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dd collapsed" id="d-bracket">
+      <div class="dd-head"><h3>Broken wheel-well bracket flapping beside the tire</h3></div>
+      <div class="dd-body">
+        <div class="split3">
+          <div class="story">
+            <div class="col-label">Summary</div>
+            <p>This was a very dangerous issue that luckily I caught immediately. The front wheel-well liner was split in half and left flapping next to the tire. At speed, a failure would have endangered me and my family, or the car next to me. It was marked with a pass on the checklist.</p>
+          </div>
+          <div class="quotes">
+            <div class="col-label">Evidence</div>
+            <div class="evi">
+              <div class="etitle"><span class="exhibit">E-27</span> The bracket, on video, eleven days after purchase</div>
+              <video controls preload="metadata" poster="assets/2026-05-26-wheel-well-bracket-E27-poster.jpg">
+                <source src="assets/2026-05-26-wheel-well-bracket-E27.mp4" type="video/mp4">
+              </video>
+              <div class="cap compact">Recorded May 26, 2026.</div>
+            </div>
+          </div>
+          <div class="proof">
+            <div class="proof-label">Checklist</div>
+            <div class="evi">
+              <div class="etitle"><span class="exhibit">E-6</span> Underbody marked as passing</div>
+              <img src="assets/checklist-underbody.png" alt="Checklist item 37, lower body and underbody condition, checked Meets Standards" loading="lazy">
+              <div class="cap compact">Item 37, lower body and underbody condition. <a href="assets/2026-09-16-gold-certified-checklist-E6.pdf" target="_blank" rel="noopener">Full checklist (PDF)</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dd collapsed" id="d-seat">
+      <div class="dd-head"><h3>Smashed driver seat control panel</h3></div>
+      <div class="dd-body">
+        <div class="story">
+          <div class="col-label">Summary</div>
+          <p>The driver-seat side panel holding the seat controls was smashed, an obvious interior defect visible from the driver's door. Referenced on tape as "the seat panel that was bashed in," and not disputed. It was marked with a pass on the checklist. The dealership repaired it after the sale.</p>
+        </div>
+        <div class="cards3">
+          <div class="evi">
+            <div class="etitle"><span class="exhibit">E-16</span> The crack beside the seat controls</div>
+            <img src="assets/2026-09-16-seat-control-panel-crack-2.jpg" alt="Driver seat side control panel with a crack next to the seat adjustment controls" loading="lazy">
+            <div class="cap compact">Photographed September 2026, before the dealership repaired the panel.</div>
+          </div>
+          <div class="evi">
+            <div class="etitle"><span class="exhibit">E-16</span> The second crack, down the side of the panel</div>
+            <img src="assets/2026-09-16-seat-control-panel-crack.jpg" alt="Long crack running down the side of the driver seat control panel beside the seat switches" loading="lazy">
+            <div class="cap compact">Photographed September 2026.</div>
+          </div>
+          <div class="evi">
+            <div class="etitle"><span class="exhibit">E-6</span> Interior marked as passing</div>
+            <img src="assets/checklist-interior.png" alt="Checklist item 159, interior surfaces free of holes rips tears, checked Meets Standards" loading="lazy">
+            <div class="cap compact">Item 159, interior surfaces "free of holes, rips, tears, excessive wear." <a href="assets/2026-09-16-gold-certified-checklist-E6.pdf" target="_blank" rel="noopener">Full checklist (PDF)</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dd collapsed" id="d-chrome">
+      <div class="dd-head"><h3>Gouged chrome trim</h3></div>
+      <div class="dd-body">
+        <div class="story">
+          <div class="col-label">Summary</div>
+          <p>This one took me several calls back and forth with corporate Toyota and the dealership to get fixed. There were several very deep gouges in the chrome, and the panel next to it was scratched down to the metal, making it look like the truck had been in an accident. Daryl Callahan acted like I was crazy for thinking it had been in an accident. This was his truck previously, and he admitted that he did the damage himself by hitting it with a snowblower. The damage still made it through the certification process even though the manager knew about it.</p>
+        </div>
+        <div class="cards3">
+          <div class="evi">
+            <div class="etitle"><span class="exhibit">E-16</span> The chrome trim gouge</div>
+            <img src="assets/2026-09-16-chrome-trim-gouge.jpg" alt="Gouge in the chrome trim piece" loading="lazy">
+            <div class="cap compact">Photographed September 2026.</div>
+          </div>
+          <div class="evi quote">
+            <div class="q">"...the crack itself in the chrome piece, I can tell you I did that myself. That's not an accident. It was my snowblower, tapped it."</div>
+            <div class="attr">Daryl Callahan, General Sales Manager, recorded call 2 <span class="ts">[13:02]</span></div>
+            <div class="clip" data-src="assets/clips/call2-1302.m4a">
+              <button class="play" type="button" aria-label="Play the recording from 13:02">Play 13:02</button>
+              <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div>
+              <span class="time">0:00</span>
+              <a class="full" href="assets/call2-sales-manager.m4a#t=782" target="_blank" rel="noopener">Full recording at 13:02</a>
+            </div>
+          </div>
+          <div class="evi">
+            <div class="etitle"><span class="exhibit">E-6</span> Bumpers and trim marked as passing</div>
+            <img src="assets/checklist-paint-bumper.png" alt="Checklist items 155 and 158, paint free of scratches and bumpers free of cuts and gouges, checked Meets Standards" loading="lazy">
+            <div class="cap compact">Item 158, bumpers "free of cuts, gouges." <a href="assets/2026-09-16-gold-certified-checklist-E6.pdf" target="_blank" rel="noopener">Full checklist (PDF)</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 <footer>
   <div class="wrap">
