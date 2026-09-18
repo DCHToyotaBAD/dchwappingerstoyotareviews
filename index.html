@@ -239,6 +239,18 @@
   }
   ol.explanations li .src { display: block; font-size: 12.5px; color: var(--ink-faint); font-family: var(--mono); margin-top: 3px; }
 
+  .rv { display: flex; flex-direction: column; gap: 10px; padding: 16px 18px; border: 1px solid #e2e2e2; border-top: 4px solid var(--rv-brand, #333); border-radius: 10px; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.06); color: #1f1f1f; font-family: var(--rv-font, inherit); }
+  .rv-plat { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .rv-wordmark { font-weight: 800; letter-spacing: .02em; font-size: 15px; color: var(--rv-brand, #333); text-decoration: none; }
+  .rv-wordmark:hover { text-decoration: underline; }
+  .rv-stars { display: inline-flex; gap: 2px; }
+  .rv-stars svg { width: 16px; height: 16px; display: block; }
+  .rv-quote { margin: 0; font-size: 14.5px; line-height: 1.5; flex: 1 1 auto; }
+  .rv-quote::before { content: "“"; } .rv-quote::after { content: "”"; }
+  .rv-meta { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font-size: 13px; color: #5c5c5c; }
+  .rv-meta b { color: #1f1f1f; font-weight: 600; }
+  .rv-link { font-size: 13px; font-weight: 600; color: var(--rv-brand, #333); text-decoration: none; align-self: flex-start; }
+  .rv-link:hover { text-decoration: underline; }
   .tbl-scroll { overflow-x: auto; margin: 22px 0; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
   table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14.5px; }
   th { text-align: left; background: #f4f1ea; padding: 12px 16px; font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--ink-soft); }
@@ -322,7 +334,7 @@
   <div class="wrap">
     <div class="kicker">A documented account · Wappingers Falls, NY</div>
     <h1>Buyer beware at DCH Toyota Wappingers</h1>
-    <p class="hook">Ask about the 9 year warranty that is exactly the same as the 7 year warranty, for $500 less.</p>
+    <p class="hook">Ask if the sticker price includes any "optional" items. And ask about the 9 year warranty that is exactly the same as the 7 year warranty, for $500 less.</p>
     <div class="hero-grid" style="grid-template-columns:minmax(0,62ch)">
     <div class="hero-intro">
     <p class="sub">
